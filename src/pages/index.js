@@ -35,8 +35,8 @@ class Clock extends React.Component {
         css={css`
           color: white;
           background-color: ${color};
-          width: 100vw;
-          height: 100vh;
+          width: 100%;
+          height: 100%;
           position: absolute;
           left: 0;
           top: 0;
@@ -66,11 +66,19 @@ class Clock extends React.Component {
               border: none;
               border-bottom: 1px solid white;
               outline: 0;
-              width: 30px;
+              width: 32px;
               font-size: 24px;
               margin: 0 10px;
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+              &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
             `}
-            type="text"
+            type="number"
             name="lastname"
             value={this.state.standDuration}
             onChange={this.handleChange}
